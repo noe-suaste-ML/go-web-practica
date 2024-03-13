@@ -36,6 +36,8 @@ func main() {
 		rt.Get("/search", ph.SearchProducts())
 		// GET ping
 		rt.Get("/ping", ph.Ping())
+		// POST create product
+		rt.Post("/", ph.CreateProduct())
 	})
 
 	if err := http.ListenAndServe(":8080", rt); err != nil {
